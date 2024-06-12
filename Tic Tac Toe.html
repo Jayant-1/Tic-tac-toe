@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li style="justify-content: center;">Tic Tac Toe</li>
+        </ul>
+    </nav>
+
+    <div class="gameContainer">
+        <div class="container">
+            <div class="line"></div>
+            <div class="box bt-0 bl-0"><span class="boxtext"></span></div>
+            <div class="box bt-0"><span class="boxtext"></span></div>
+            <div class="box bt-0 br-0"><span class="boxtext"></span></div>
+            <div class="box bl-0"><span class="boxtext"></span></div>
+            <div class="box"><span class="boxtext"></span></div>
+            <div class="box br-0"><span class="boxtext"></span></div>
+            <div class="box bl-0 bb-0"><span class="boxtext"></span></div>
+            <div class="box bb-0"><span class="boxtext"></span></div>
+            <div class="box bb-0 br-0"><span class="boxtext"></span></div>
+        </div>
+        <div class="gameInfo">
+            <h1>Welcome to Tic Tac Toe</h1>
+            <div>
+                <span class="info">Turn for X</span>
+                <button id="reset">Eraser</button>
+            </div>
+            <div class="imgbox">
+                <img width="auto"
+                    src="data:image/png;base64,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" />
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    /* @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&family=Roboto&display=swap'); */
+    * {
+        font-family: 'Baloo Bhaina 2', cursive;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav {
+        justify-content: center;
+        background-color: rgb(89 81 210);
+        color: white;
+        height: 65px;
+        font-size: 27px;
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    nav ul {
+        list-style-type: none;
+    }
+
+    .gameContainer {
+        background: rgba(0, 0, 0, 0.7) url(http://source.unsplash.com/900x900/?coding);
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-rows: repeat(3, 10vw);
+        grid-template-columns: repeat(3, 10vw);
+        font-family: 'Roboto', sans-serif;
+        position: relative;
+    }
+
+    .box {
+        border: 2px solid black;
+        font-size: 8vw;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box:hover {
+        background-color: rgb(242, 234, 250);
+    }
+
+    .info {
+        font-size: 22px;
+    }
+
+    .gameInfo {
+        padding: 0 34px;
+        font-family: 'Baloo Bhaina 2', cursive;
+    }
+
+    .gameInfo h1 {
+        font-size: 2.5rem;
+    }
+
+    .imgbox img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 28px;
+        margin-bottom: auto;
+        width: 0;
+        transition: width 1s ease-in-out;
+    }
+
+    .br-0 {
+        border-right: 0;
+    }
+
+    .bl-0 {
+        border-left: 0;
+    }
+
+    .bt-0 {
+        border-top: 0;
+    }
+
+    .bb-0 {
+        border-bottom: 0;
+    }
+
+    #reset {
+        border: 2px solid black;
+        margin: 0 23px;
+        padding: 1px 18px;
+        background: rgb(174 170 251);
+        border-radius: 6px;
+        cursor: pointer;
+        font-family: 'Baloo Bhaina 2';
+        font-size: 15px;
+        font-weight: bolder;
+    }
+
+    .line {
+        background-color: black;
+        height: 3px;
+        width: 0;
+        position: absolute;
+        background-color: rgb(149 142 255);
+        transition: width 1s ease-in-out;
+    }
+
+    @media screen and (max-width: 950px) {
+        * {
+            font-family: 'Baloo Bhaina 2';
+        }
+
+        .gameContainer {
+            flex-wrap: wrap;
+        }
+
+        .gameInfo {
+            margin-top: 34px;
+        }
+
+        .gameInfo h1 {
+            font-size: 1.5rem;
+        }
+
+        .container {
+            grid-template-rows: repeat(3, 20vw);
+            grid-template-columns: repeat(3, 20vw);
+            justify-content: center;
+        }
+    }
+</style>
+<script>
+    console.log("Welcome to Tic Tac Toe")
+    // let music = new Audio("music.mp3")
+    // let audioTurn = new Audio("ting.mp3")
+    // let gameover = new Audio("gameover.mp3")
+    let turn = "X"
+    let isgameover = false;
+
+    // Function to change the turn
+    const changeTurn = () => {
+        return turn === "X" ? "0" : "X"
+    }
+
+    // Function to check for a win
+    const checkWin = () => {
+        let boxtext = document.getElementsByClassName('boxtext');
+        let wins = [
+            [0, 1, 2, 5, 5, 0],
+            [3, 4, 5, 5, 15, 0],
+            [6, 7, 8, 5, 25, 0],
+            [0, 3, 6, -5, 15, 90],
+            [1, 4, 7, 5, 15, 90],
+            [2, 5, 8, 15, 15, 90],
+            [0, 4, 8, 5, 15, 45],
+            [2, 4, 6, 5, 15, 135],
+        ]
+        wins.forEach(e => {
+            if ((boxtext[e[0]].innerText === boxtext[e[1]].innerText) && (boxtext[e[2]].innerText === boxtext[e[1]].innerText) && (boxtext[e[0]].innerText !== "")) {
+                document.querySelector('.info').innerText = boxtext[e[0]].innerText + " Won"
+                isgameover = true
+                function timerefresh(timeoutperiod) {
+                    setTimeout('location.reload(turn);', timeoutperiod);
+                }
+                window.onload = timerefresh(2000)
+
+                document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "100px";// justify-content = 'center';
+                //document.querySelector(".line").style.transform = `translate(${e[3]}vw, ${e[4]}vw) rotate(${e[5]}deg)`
+                //document.querySelector(".line").style.width = "20vw";
+            }
+        })
+    }
+
+    // Game Logic
+    // music.play()
+    let boxes = document.getElementsByClassName("box");
+    Array.from(boxes).forEach(element => {
+        let boxtext = element.querySelector('.boxtext');
+        element.addEventListener('click', () => {
+            if (boxtext.innerText === '') {
+                boxtext.innerText = turn;
+                turn = changeTurn();
+                // audioTurn.play();
+                checkWin();
+                if (!isgameover) {
+                    document.getElementsByClassName("info")[0].innerText = "Turn for " + turn;
+                }
+            }
+        })
+    })
+
+    // Add onclick listener to reset button
+    reset.addEventListener('click', () => {
+        let boxtexts = document.querySelectorAll('.boxtext');
+        Array.from(boxtexts).forEach(element => {
+            element.innerText = ""
+        });
+        turn = "X";
+        isgameover = false
+        document.querySelector(".line").style.width = "0vw";
+        document.getElementsByClassName("info")[0].innerText = "Turn for " + turn;
+        document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0px"
+    })
+</script>
+
+</html>
